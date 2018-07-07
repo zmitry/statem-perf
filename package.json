@@ -1,0 +1,18 @@
+{
+  "name": "perf",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "Dima Zherebko <kraken@live.ru>",
+  "license": "MIT",
+  "scripts": {
+    "bench": "node --experimental-modules --expose-gc bench/bench.js",
+    "start": "matcha ./suite.js"
+  },
+  "dependencies": {
+    "effector": "^0.17.7",
+    "matcha": "^0.7.0",
+    "microstates": "^0.8.1",
+    "mobx": "^4.3.0"
+  }
+}
