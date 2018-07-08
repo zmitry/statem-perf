@@ -1,5 +1,5 @@
 const { generateDraft } = require("./mock");
-const { observable } = require("mobx");
+const { observable, transaction } = require("mobx");
 const { createStore } = require("redux");
 const { createStore: efStore, createEvent: efAction } = require("effector");
 const { create } = require("microstates");
@@ -66,6 +66,30 @@ suite("mobx", function() {
       }
     };
     mutate(data);
+  });
+  const data2 = observable(generateDraft());
+
+  bench("modify transaction", function() {
+    const mutate = draft => {
+      for (let i = 0; i < MAX * MODIFY_FACTOR; i++) {
+        draft[i].done = Math.random();
+      }
+    };
+    transaction(() => {
+      mutate(data2);
+    });
+  });
+  const data3 = observable.array(generateDraft());
+
+  bench("modify transaction shallow", function() {
+    const mutate = draft => {
+      for (let i = 0; i < MAX * MODIFY_FACTOR; i++) {
+        draft[i].done = Math.random();
+      }
+    };
+    transaction(() => {
+      mutate(data3);
+    });
   });
 });
 
@@ -144,7 +168,12 @@ suite("microstates", function() {
   bench("update 3", function() {
     store3.update3();
   });
+  const store4 = create(Items, { items: generateDraft() });
+
   bench("update 4", function() {
+    store4.items.set(reducer(store3.items.state));
+  });
+  bench("empty call", function() {
     store3.update4();
   });
 });
