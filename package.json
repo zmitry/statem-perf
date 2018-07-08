@@ -6,7 +6,8 @@
   "author": "Dima Zherebko <kraken@live.ru>",
   "license": "MIT",
   "scripts": {
-    "bench": "node --experimental-modules --expose-gc bench/bench.js",
+    "mbench": "node --experimental-modules --expose-gc mem.js",
+    "pbench": "matcha ./suite.js",
     "start": "matcha ./suite.js"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "matcha": "^0.7.0",
     "microstates": "^0.8.1",
     "mobx": "^4.3.0",
-    "pathon": "^2.0.4"
+    "pathon": "^2.0.4",
+    "pretty-hrtime": "^1.0.3"
   }
 }

@@ -8,14 +8,6 @@ const { path } = require("pathon");
 const MAX = 1000;
 const MODIFY_FACTOR = 0.5;
 
-const reducer = (draft = generateDraft()) => {
-  const newDraft = draft.concat([]);
-  for (let i = 0; i < MAX * MODIFY_FACTOR; i++) {
-    newDraft[i] = Object.assign({}, newDraft[i], { done: Math.random() });
-  }
-  return newDraft;
-};
-
 suite("pathon", function() {
   bench("create", function() {
     const pRoot = path("root", generateDraft());

@@ -1,4 +1,4 @@
-const MAX = 1000;
+const MAX = 5000;
 const MODIFY_FACTOR = 0.1;
 
 function getItem(any, i) {
@@ -16,4 +16,15 @@ function generateDraft() {
   return draft;
 }
 
+const reducer = (draft = generateDraft()) => {
+  const newDraft = draft.concat([]);
+  for (let i = 0; i < MAX * MODIFY_FACTOR; i++) {
+    newDraft[i] = Object.assign({}, newDraft[i], { done: Math.random() });
+  }
+  return newDraft;
+};
+
+module.exports.MODIFY_FACTOR = MODIFY_FACTOR;
 module.exports.generateDraft = generateDraft;
+module.exports.MAX = MAX;
+module.exports.reducer = reducer;
