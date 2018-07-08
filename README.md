@@ -29,3 +29,47 @@
               14 op/s » update 4
            7,273 op/s » empty call
 ```
+
+# memory
+
+```
+* just mutate [FLOOR]
+  create: 4.07 ms
+  update: 41 μs
+  heap:
+    total 1.6 Mb
+    used  1.8 Mb
+  rss: 1.6 Mb
+
+* microstates
+  create: 4.8 ms
+  update: 9.07 s
+  heap:
+    total 879.8 Mb
+    used  826.5 Mb
+  rss: 882.7 Mb
+
+* mobx
+  create: 197 ms
+  update: 1.62 ms
+  heap:
+    total 8.9 Mb
+    used  17.3 Mb
+  rss: 8.6 Mb
+
+* mobx shallow
+  create: 144 ms
+  update: 1.03 ms
+  heap:
+    total 10.5 Mb
+    used  12.9 Mb
+  rss: 8.3 Mb
+
+* redux
+  create: 31 ms
+  update: 440 μs
+  heap:
+    total 0.0 Mb
+    used  1.7 Mb
+  rss: -1.4 Mb
+```
