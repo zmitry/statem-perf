@@ -1,28 +1,31 @@
 ## state management perf profiling
 
 ```
-              pathon
-          22,322 op/s » create
-           2,380 op/s » modify
+                      pathon
+          23,091 op/s » create
+           2,274 op/s » modify
 
                       redux
-          41,565 op/s » create
-           3,081 op/s » modify
+          21,070 op/s » create
+           2,553 op/s » modify
 
                       mobx
-              54 op/s » create
-           2,530 op/s » shallow wrap
-           2,847 op/s » modify
+              49 op/s » create
+          10,289 op/s » shallow wrap
+           2,808 op/s » modify
+           2,974 op/s » modify transaction
+           2,994 op/s » modify transaction shallow
 
                       effector
-           2,916 op/s » create
-           1,867 op/s » modify
+           2,760 op/s » create
+           2,820 op/s » modify
 
                       microstates
-           2,466 op/s » create
-           2,347 op/s » create simple subs
+           2,693 op/s » create
+           2,316 op/s » create simple subs
                6 op/s » update
                4 op/s » update 2
-               9 op/s » update 3
-           7,852 op/s » update 4
+               8 op/s » update 3
+              14 op/s » update 4
+           7,273 op/s » empty call
 ```
