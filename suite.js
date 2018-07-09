@@ -1,4 +1,4 @@
-const { generateDraft } = require("./mock");
+const { generateDraft, reducer } = require("./mock");
 const { observable, transaction } = require("mobx");
 const { createStore } = require("redux");
 const { createStore: efStore, createEvent: efAction } = require("effector");
@@ -116,10 +116,7 @@ class Items {
   }
 
   update() {
-    let update = this;
-    for (let i = 0; i < MAX * MODIFY_FACTOR; i++) {
-      update = this.items[i].todo.set(Math.random());
-    }
+    let update = this.items.map(el => el.set(Math.random()));
     return update;
   }
   update2() {

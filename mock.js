@@ -1,4 +1,4 @@
-const MAX = 5000;
+const MAX = 1000;
 const MODIFY_FACTOR = 0.1;
 
 function getItem(any, i) {
