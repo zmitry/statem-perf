@@ -5,7 +5,7 @@ const { path } = require("pathon");
 const MAX = 1000;
 const MODIFY_FACTOR = 0.5;
 
-require("./frameworks/parket");
+// require("./frameworks/parket");
 require("./frameworks/redux");
 require("./frameworks/mst");
 require("./frameworks/mobx");

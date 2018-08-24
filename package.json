@@ -11,6 +11,7 @@
     "start": "matcha ./suite.js"
   },
   "dependencies": {
+    "core-js": "^2.5.7",
     "effector": "^0.17.7",
     "matcha": "^0.7.0",
     "microstates": "^0.8.1",
@@ -18,6 +19,7 @@
     "mobx-state-tree": "^2.2.0",
     "parket": "^0.4.2",
     "pathon": "^2.0.4",
-    "pretty-hrtime": "^1.0.3"
+    "pretty-hrtime": "^1.0.3",
+    "redux": "^4.0.0"
   }
 }
